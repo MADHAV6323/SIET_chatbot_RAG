@@ -1,7 +1,7 @@
 import faiss
 import numpy as py
 from groq import Groq
-from pypdf import PDFReader
+from pypdf import PdfReader
 from sentence_transformers import sentenceTransformer
 #load pdfs
 def load_pdf(pdf_path):
@@ -53,7 +53,7 @@ def reytrieve_content(question, embed_model,chunks,index,numchunks=3):
   for i in vec_indices[0]:
     if i != -1:
       background += chunks[i] + "\n\n"
-    return background  
+  return background  
   #Ask
 def ask_reg(question, embed_model,chunks, Index,apl_key, num_chunks, model_name = "openai/gpt-oss-120b")
 key = api_key
@@ -70,4 +70,6 @@ if not key:
     model = modle_name,
    message = [ {"role : "uder",
              "content" : prompt}]
-              te 
+              temperature = 0.3,
+  )
+  return response.choices[0].message.content
