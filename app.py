@@ -15,7 +15,7 @@ def initiate_rag():
 
 if "chat_hist" not in st.session_state:
   st.session_state.chat_hist = []
-for qa in st.session_state.chat_hit :
+for qa in st.session_state.chat_hist :
   with st.chat_message(qa["role"]):
     st.write(qa["content"])
 
