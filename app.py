@@ -23,7 +23,7 @@ question = st.chart_input("ask any question  about college info....")
 
 if question:
   st.session_state.chat_hist.append(
-    {"role" :"user", "content" = question})
+    {"role" :"user", "content" : question})
   with st.chart_messages("user"):
     st.write(question)
   with st.chart_message("assistant"):
