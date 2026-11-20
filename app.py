@@ -30,7 +30,7 @@ if question:
     with st.spinner("asking RAG for answer....."):
       answe = ask_rag(question,embed_modle,chunk,index,api_key = mykey)
       st.write(answer)
-       st.session_state.chat_hist.append(
+      st.session_state.chat_hist.append(
          {"role":"assistant", "content" : answer})
 if st.button("clear chat"):
    st.session_state.chat_hist = []
