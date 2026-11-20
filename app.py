@@ -9,7 +9,7 @@ mykey = st.secrets["GROQ_API_key"]
 
 
 def initiate_rag():
-  return load_base("C:\Users\Madhav.U\Downloads\01_College_Information.pdf")
+  return load_base("01_College_Information.pdf")
 
   index, embed_module, chunks = initiate_rag() 
 
